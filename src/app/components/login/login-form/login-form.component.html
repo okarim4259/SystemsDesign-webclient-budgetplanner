@@ -1,0 +1,44 @@
+<div *ngIf="_displayError" class="alert alert-danger" role="alert">
+  {{ _errorMessage }}
+</div>
+<form class="form-signin" (submit)="onLoginSubmit()">
+  <label for="email" class="sr-only">Email address</label>
+  <input
+    type="email"
+    name="email"
+    [(ngModel)]="_email"
+    class="form-control"
+    placeholder="Email address"
+    required
+    autofocus
+  />
+  <br />
+  <label for="password" class="sr-only">Password</label>
+  <input
+    type="password"
+    name="password"
+    [(ngModel)]="_password"
+    class="form-control"
+    placeholder="Password"
+    required
+  />
+  <br />
+
+  <input type="submit" value="Login" class="btn btn-info btn-block" />
+
+  <div style="margin-top: 30px;">
+    <a routerLink="/register"><u>Don't have an account? Sign Up</u></a>
+    <!-- <a (click)="goToRegistration()" style="font-size:15px;"
+      ><u>Don't have an account? Sign Up</u></a
+    > -->
+  </div>
+
+  <div style="margin-top:30px; margin-bottom: 30px;"><strong>or</strong></div>
+
+  <a class="btn btn-danger text-white">
+    <i class="fa fa-google-plus"></i> Sign in with Google
+  </a>
+  <a class="btn btn-primary text-white" style="margin-top:30px">
+    <i class="fa fa-facebook"></i> Sign in with Facebook
+  </a>
+</form>
